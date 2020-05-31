@@ -22,6 +22,8 @@ class Database {
         console.log('Success to connect with Mongo');
       })
       .catch((e) => console.log(e));
+
+    mongoose.set('useCreateIndex', true);
   }
 }
 
