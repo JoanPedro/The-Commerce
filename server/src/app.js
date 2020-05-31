@@ -28,7 +28,7 @@ class App {
 
     this.server.set('view engine', 'ejs');
 
-    if (process.env.NODE_ENV === 'production') this.server.use(morgan);
+    if (process.env.NODE_ENV === 'development') this.server.use(morgan('dev'));
 
     this.server.use(cors());
     this.server.disable('x-powered-by'); // Retira da requisição informaçẽos do Express
