@@ -1,4 +1,5 @@
 import 'dotenv/config';
+
 import compression from 'compression';
 import ejs from 'ejs';
 import morgan from 'morgan';
