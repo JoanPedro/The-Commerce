@@ -1,7 +1,7 @@
 import 'dotenv/config';
 
 import compression from 'compression';
-import ejs from 'ejs';
+// import ejs from 'ejs';
 import morgan from 'morgan';
 import cors from 'cors';
 import Youch from 'youch';
