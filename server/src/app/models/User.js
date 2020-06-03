@@ -21,8 +21,8 @@ const UserSchema = new mongoose.Schema(
     },
     market: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Loja',
-      required: [true, 'Marketplace can not be empety.'],
+      ref: 'Market',
+      required: [true, 'Marketplace can not be empty.'],
     },
     permission: {
       type: Array,
@@ -57,7 +57,7 @@ UserSchema.methods.passwordValidator = (password) => {
   return hash === this.hash;
 };
 
-UserSchema.methods.gerarToken = () => {
+UserSchema.methods.generateToken = () => {
   const today = new Date();
   const exp = new Date(today);
 
@@ -75,9 +75,9 @@ UserSchema.methods.gerarToken = () => {
 
 UserSchema.methods.sendAuth = () => {
   return {
-    nome: this.name,
+    name: this.name,
     email: this.email,
-    loja: this.market,
+    market: this.market,
     role: this.permission,
     token: this.gerarToken(),
   };
@@ -91,7 +91,7 @@ UserSchema.methods.recuperationToken = () => {
   return this.recovery;
 };
 
-UserSchema.methods.endRecuperation = () => {
+UserSchema.methods.recuperationEnd = () => {
   this.recovery = { token: null, date: null };
 
   return this.recovery;
