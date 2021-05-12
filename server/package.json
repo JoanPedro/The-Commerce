@@ -27,7 +27,7 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
     "node-pagseguro": "^0.1.9",
-    "nodemailer": "^6.4.8",
+    "nodemailer": "^6.4.16",
     "request": "^2.88.2",
     "xml2js": "^0.4.23",
     "youch": "^2.0.10"
